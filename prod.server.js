@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
   next();
 });
 
-var appData = require('https://github.com/yangxi0126/sellApp/contributors/master/data.json');
+var appData = require('./data.json');
 var seller = appData.seller;
 var goods = appData.goods;
 var ratings = appData.ratings;
@@ -37,13 +37,11 @@ apiRoutes.get('/ratings', function (req, res) {
   });
 });
 
-app.use('./api', apiRoutes);
+app.use('/api', apiRoutes);
 app.use(express.static('./dist'));
 
 module.exports = app.listen(port, function (err) {
   if (err) {
-    console.log(err)
-    return
+    return;
   }
-  console.log('Listening at http://localhost:' + port + '\n')
-})
+});
