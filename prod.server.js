@@ -37,7 +37,7 @@ apiRoutes.get('/ratings', function (req, res) {
   });
 });
 
-app.use('https://github.com/yangxi0126/sellApp/blob/master/api', apiRoutes);
+app.use('/api', apiRoutes);
 app.use(express.static('./dist'));
 
 module.exports = app.listen(port, function (err) {
