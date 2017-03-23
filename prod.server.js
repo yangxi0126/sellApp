@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
   next();
 });
 
-var appData = require('./data.json');
+var appData = require('https://github.com/yangxi0126/sellApp/contributors/master/data.json');
 var seller = appData.seller;
 var goods = appData.goods;
 var ratings = appData.ratings;
